@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Point {
+    int x;
+    int y;
+};
+struct Rectangle {
+    struct Point upper_left;
+    struct Point lower_right;
+};
+int main() {
+    struct Rectangle rect;
+
+    rect.upper_left.x = 5;
+    rect.upper_left.y = 7;
+
+    rect.lower_right.x = 12;
+    rect.lower_right.y = 8;
+
+    printf("Upper left point: (%d, %d)\n", rect.upper_left.x, rect.upper_left.y);
+    printf("Lower right point: (%d, %d)\n", rect.lower_right.x, rect.lower_right.y);
+
+    return 0;
+}
+
+
+
