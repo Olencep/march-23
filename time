@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+struct Time {
+    int hrs;
+    int mins;
+};
+
+struct Time add_times(struct Time t1, struct Time t2) {
+    struct Time sum;
+    sum.hrs = t1.hrs + t2.hrs;
+    sum.mins = t1.mins + t2.mins;
+    sum.hrs += sum.mins / 60;
+    sum.mins %= 60;
+    return sum;
+}
+
+int main() {
+    struct Time time1 = {2, 30};
+    struct Time time2 = {1, 32};
+    struct Time time3 = add_times(time1, time2);
+    printf("Total time: %d hours, %d minutes\n", time3.hrs, time3.mins);
+    return 0;
+}
