@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+struct Student {
+    int id;
+    float feepaid;
+};
+
+float total_fee(struct Student students[], int n) {
+    float sum = 0;
+    for (int i = 0; i < n; i++) {
+        sum += students[i].feepaid;
+    }
+    return sum;
+}
+
+int main() {
+    struct Student students[5] = {
+        {10, 100.0},
+        {10, 200.0},
+        {13, 150.0},
+        {14, 250.0},
+        {15, 50.0}
+    };
+    float total = total_fee(students, 5);
+    printf("Total fee paid by all students: $%.2f\n", total);
+    return 0;
+}
